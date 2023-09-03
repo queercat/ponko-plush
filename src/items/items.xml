@@ -32,4 +32,52 @@
       </Attack>
     </MeleeWeapon>
   </Item>
+
+  <Item name="Trixie Lulaplush" identifier="Trixie Lulaplush" category="Weapon,Decorative,Misc" impactsoundtag="impact_soft" RequireAimToUse="True" Tags="smallitem,medical" description="the great and powerful" scale=".4">
+    <Sprite texture="%ModDir%/images/trixie_plush.png" sourcerect="0,0,196,244" depth="0" origin="0.5,0.5" />
+    <Body width="196" height="244" density="30" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="NearbyCharacters" range="1000">
+        <Affliction identifier="radiationsickness" strength=".01" />
+        <Affliction identifier="psychosis" amount="2.0" />
+        <Affliction identifier="haste" amount="2" />
+        <Affliction identifier="strengthen" amount="2" />
+
+        <ReduceAffliction type="bleeding" amount="2" />
+        
+        <ReduceAffliction identifier="opiateaddiction" amount="2" />
+        
+        <ReduceAffliction identifier="opiatewithdrawal" amount="2" />
+        <ReduceAffliction identifier="chemwithdrawal" amount="2" />
+
+        <ReduceAffliction identifier="opiateoverdose" amount="2" />
+
+        <ReduceAffliction identifier="deliriuminepoisoning" amount="2" />
+        <ReduceAffliction identifier="cyanidepoisoning" amount="2" />
+        <ReduceAffliction identifier="morbusinepoisoning" amount="2" />
+        <ReduceAffliction identifier="sufforinpoisoning" amount="2" />
+
+        <ReduceAffliction identifier="damage" amount="2" />
+        <ReduceAffliction identifier="burn" amount="2" />
+
+        <GiveExperience amount="1" />
+      </StatusEffect>
+
+      <StatusEffect type="Always" interval="150" delay="150">
+        <Fire />
+        <Affliction identifier="psychosis" strength="100" probability=".1" />
+      </StatusEffect>
+    </ItemComponent>
+
+    <MeleeWeapon slots="RightHand+LeftHand,Any" controlpose="true" aimpos="45,10" handle1="-10,0" handle2="0,5" holdangle="60" reload="1" range="100" combatpriority="20" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="0" itemdamage="0" targetimpulse="1000">
+        <Affliction identifier="blunttrauma" strength="0" />
+        <Affliction identifier="stun" strength="0.1" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character"/>
+          <Sound file="%ModDir%/sounds/squeak.ogg" range="500"/>
+        </StatusEffect>
+      </Attack>
+    </MeleeWeapon>
+  </Item>
 </Items>
