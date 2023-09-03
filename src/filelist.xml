@@ -1,0 +1,3 @@
+<contentpackage name="Ponko Plush" modversion="0.0.0" corepackage="false">
+  <Item file="%ModDir%/items/items.xml" />
+</contentpackage>
