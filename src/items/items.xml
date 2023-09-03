@@ -34,8 +34,17 @@
   </Item>
 
   <Item name="Trixie Lulaplush" identifier="Trixie Lulaplush" category="Weapon,Decorative,Misc" impactsoundtag="impact_soft" RequireAimToUse="True" Tags="smallitem,medical" description="the great and powerful" scale=".4">
+    <Price baseprice="100000" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" minavailable="1" />
+      <Price storeidentifier="merchantcity" minavailable="1" />
+      <Price storeidentifier="merchantresearch" minavailable="1" />
+      <Price storeidentifier="merchantmilitary" minavailable="1" />
+      <Price storeidentifier="merchantmine" minavailable="1" />
+    </Price>
+
     <Sprite texture="%ModDir%/images/trixie_plush.png" sourcerect="0,0,196,244" depth="0" origin="0.5,0.5" />
     <Body width="196" height="244" density="30" />
+    
     <ItemComponent>
       <StatusEffect type="Always" target="NearbyCharacters" range="1000">
         <Affliction identifier="radiationsickness" strength=".01" />
